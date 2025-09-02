@@ -67,4 +67,11 @@ pnpm install
 pnpm dev
 ```
 
+### build filecoin mcp
+
+```
+npm run build-fil-mcp
+./dist/mcp-services/fil-mcp.js  
+```
+
 Your app template should now be running on [localhost:3000](http://localhost:3000).

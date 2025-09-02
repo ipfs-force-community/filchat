@@ -41,3 +41,9 @@ yarn-error.log*
 /playwright-report/
 /blob-report/
 /playwright/*
+
+.vscode
+npminstall-debug.log
+dist
+app.log
+tsconfig.tsbuildinfo

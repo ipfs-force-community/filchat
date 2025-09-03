@@ -1,0 +1,8 @@
+[
+  {
+    "name": "filecoin-mcp",
+    "urlOrCommand": "http://localhost:3002/mcp",
+    "transportType": "http",
+    "args": []
+  }
+]

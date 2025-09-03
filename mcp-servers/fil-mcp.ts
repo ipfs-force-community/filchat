@@ -114,7 +114,7 @@ function removeMidColumn(csv: string): string {
       'power(TiB)': power,
       pledge: pledge,
       penalty: penalty,
-    })
+    }),
   );
 
   // 转换回 CSV 格式
@@ -122,7 +122,7 @@ function removeMidColumn(csv: string): string {
   const rows = formattedRecords.map((row) =>
     Object.values(row)
       .map((value) => `"${value}"`)
-      .join(',')
+      .join(','),
   );
   return [header, ...rows].join('\n');
 }

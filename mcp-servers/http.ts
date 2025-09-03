@@ -27,6 +27,9 @@ export async function fetchMinerPenalty(minerID: string): Promise<string> {
       console.error('Axios error message:', error.message);
       console.error('HTTP status code:', error.response?.status);
       console.error('Response data:', error.response?.data);
+      error = new Error(
+        error.message + ': ' + JSON.stringify(error.response?.data),
+      );
     } else {
       console.error('Unexpected error:', error);
     }

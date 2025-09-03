@@ -163,20 +163,20 @@ export async function POST(request: Request) {
               : [
                   // 'getWeather',
                   'minerPenalty',
-                  'createDocument',
-                  'updateDocument',
-                  'requestSuggestions',
+                  // 'createDocument',
+                  // 'updateDocument',
+                  // 'requestSuggestions',
                 ],
           experimental_transform: smoothStream({ chunking: 'word' }),
           tools: {
             // getWeather,
             minerPenalty: minerPenalty(),
-            createDocument: createDocument({ session, dataStream }),
-            updateDocument: updateDocument({ session, dataStream }),
-            requestSuggestions: requestSuggestions({
-              session,
-              dataStream,
-            }),
+            // createDocument: createDocument({ session, dataStream }),
+            // updateDocument: updateDocument({ session, dataStream }),
+            // requestSuggestions: requestSuggestions({
+            //   session,
+            //   dataStream,
+            // }),
           },
           experimental_telemetry: {
             isEnabled: isProductionEnvironment,

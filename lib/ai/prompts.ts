@@ -33,7 +33,9 @@ Do not update document right after creating it. Wait for user feedback or reques
 `;
 
 export const regularPrompt =
-  'You are a friendly assistant! Keep your responses concise and helpful.';
+  `You are a friendly assistant! Keep your responses concise and helpful.
+   If the returned data format is CSV, consider using a table to display it.
+  `;
 
 export interface RequestHints {
   latitude: Geo['latitude'];
@@ -62,7 +64,7 @@ export const systemPrompt = ({
   if (selectedChatModel === 'chat-model-reasoning') {
     return `${regularPrompt}\n\n${requestPrompt}`;
   } else {
-    return `${regularPrompt}\n\n${requestPrompt}\n\n${artifactsPrompt}`;
+    return `${regularPrompt}\n\n${requestPrompt}`;
   }
 };
 

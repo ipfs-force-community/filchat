@@ -192,7 +192,7 @@ const PurePreviewMessage = ({
                       {state === 'output-available' && (
                         <ToolOutput
                           output={<Weather weatherAtLocation={part.output} />}
-                          errorText={undefined}
+                          errorText=""
                         />
                       )}
                     </ToolContent>
@@ -200,53 +200,53 @@ const PurePreviewMessage = ({
                 );
               }
 
-              if (type === 'tool-createDocument') {
-                const { toolCallId } = part;
+              // if (type === 'tool-createDocument') {
+              //   const { toolCallId } = part;
 
-                if (part.output && 'error' in part.output) {
-                  return (
-                    <div
-                      key={toolCallId}
-                      className="p-4 text-red-500 bg-red-50 rounded-lg border border-red-200 dark:bg-red-950/50"
-                    >
-                      Error creating document: {String(part.output.error)}
-                    </div>
-                  );
-                }
+              //   if (part.output && 'error' in part.output) {
+              //     return (
+              //       <div
+              //         key={toolCallId}
+              //         className="p-4 text-red-500 bg-red-50 rounded-lg border border-red-200 dark:bg-red-950/50"
+              //       >
+              //         Error creating document: {String(part.output.error)}
+              //       </div>
+              //     );
+              //   }
 
-                return (
-                  <DocumentPreview
-                    key={toolCallId}
-                    isReadonly={isReadonly}
-                    result={part.output}
-                  />
-                );
-              }
+              //   return (
+              //     <DocumentPreview
+              //       key={toolCallId}
+              //       isReadonly={isReadonly}
+              //       result={part.output}
+              //     />
+              //   );
+              // }
 
-              if (type === 'tool-updateDocument') {
-                const { toolCallId } = part;
+              // if (type === 'tool-updateDocument') {
+              //   const { toolCallId } = part;
 
-                if (part.output && 'error' in part.output) {
-                  return (
-                    <div
-                      key={toolCallId}
-                      className="p-4 text-red-500 bg-red-50 rounded-lg border border-red-200 dark:bg-red-950/50"
-                    >
-                      Error updating document: {String(part.output.error)}
-                    </div>
-                  );
-                }
+              //   if (part.output && 'error' in part.output) {
+              //     return (
+              //       <div
+              //         key={toolCallId}
+              //         className="p-4 text-red-500 bg-red-50 rounded-lg border border-red-200 dark:bg-red-950/50"
+              //       >
+              //         Error updating document: {String(part.output.error)}
+              //       </div>
+              //     );
+              //   }
 
-                return (
-                  <div key={toolCallId} className="relative">
-                    <DocumentPreview
-                      isReadonly={isReadonly}
-                      result={part.output}
-                      args={{ ...part.output, isUpdate: true }}
-                    />
-                  </div>
-                );
-              }
+              //   return (
+              //     <div key={toolCallId} className="relative">
+              //       <DocumentPreview
+              //         isReadonly={isReadonly}
+              //         result={part.output}
+              //         args={{ ...part.output, isUpdate: true }}
+              //       />
+              //     </div>
+              //   );
+              // }
 
               if (type === 'tool-requestSuggestions') {
                 const { toolCallId, state } = part;
@@ -273,7 +273,7 @@ const PurePreviewMessage = ({
                               />
                             )
                           }
-                          errorText={undefined}
+                          errorText=""
                         />
                       )}
                     </ToolContent>

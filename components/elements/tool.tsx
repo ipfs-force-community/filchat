@@ -113,7 +113,7 @@ export const ToolInput = ({ className, input, ...props }: ToolInputProps) => (
 
 export type ToolOutputProps = ComponentProps<'div'> & {
   output: ReactNode;
-  errorText: ToolUIPart['errorText'];
+  errorText: string;
 };
 
 export const ToolOutput = ({
